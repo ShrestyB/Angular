@@ -20,14 +20,23 @@ export class RoomsComponent {
   
   }
 
-  roomList: RoomList={
+  roomList: RoomList[]=[
+    {
     roomType: 'Deluxe',
     ammenities: ['TV','AC','WIFI'],
     price: 5000,
     checkIn: new Date('2024-09-01'),
     checkOut: new Date('2024-09-10')
 
-  }
+    },
+    {
+      roomType: 'Standard',
+      ammenities: ['TV','AC','WIFI'],
+      price: 3000,
+      checkIn: new Date('2024-09-01'),
+      checkOut: new Date('2024-09-03')
+    }
+  ]
 
   toggle(){
     this.hide = !this.hide;
