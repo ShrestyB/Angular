@@ -1,5 +1,5 @@
 <app-rooms></app-rooms>
-<div [ngSwitch]="auth">
+  <div [ngSwitch]="auth">
     <div *ngSwitchCase="'admin'">Welcome Admin</div>
     <div *ngSwitchCase="'user'">Welcome User</div>
     <div *ngSwitchDefault>Unknown</div>    

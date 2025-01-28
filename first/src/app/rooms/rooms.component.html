@@ -1,3 +1,4 @@
+
 <h3>Welcome to {{hotelName}}</h3>
 
 <!-- <div [hidden]="hide" >
@@ -10,9 +11,43 @@
 </div>
 
 <div *ngIf="rooms?.available">
-    Rooms List
-    <!-- {{roomList}} -->
+    Rooms Type: {{roomList[0].roomType |titlecase}}
+    <!-- {{ roomList | json }} -->
+      
 </div>
 
+<div *ngIf="rooms?.available">
+    <table mat-table [dataSource]="roomList" class="mat-elevation-z8">
+       
+        <ng-container matColumnDef="roomType">
+            <th mat-header-cell *matHeaderCellDef> Room Type </th>
+            <td mat-cell *matCellDef="let room"> {{room.roomType | titlecase}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="ammenities">
+            <th mat-header-cell *matHeaderCellDef> Amenities </th>
+            <td mat-cell *matCellDef="let room"> {{room.ammenities.join(', ')}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="price">
+            <th mat-header-cell *matHeaderCellDef> Price </th>
+            <td mat-cell *matCellDef="let room"> {{room.price}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="checkIn">
+            <th mat-header-cell *matHeaderCellDef> Check-In </th>
+            <td mat-cell *matCellDef="let room"> {{room.checkIn | date}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="checkOut">
+            <th mat-header-cell *matHeaderCellDef> Check-Out </th>
+            <td mat-cell *matCellDef="let room"> {{room.checkOut | date}} </td>
+        </ng-container>
+
+        <!-- Header and Row Declarations -->
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</div>
 
 <!-- <button (click)=toggle()>toggle</button> -->
