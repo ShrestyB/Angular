@@ -1,0 +1,16 @@
+<div class="order-status-container">
+  <mat-horizontal-stepper [linear]="true" class="stepper" >
+    <mat-step *ngFor="let status of orderStatuses">
+      <div class="status-item" [ngClass]="status.state" matTooltip="{{ status.tooltip }}">
+        <h3>{{ status.label }}</h3>
+        <p>{{ status.description }}</p>
+
+        <mat-progress-bar
+          mode="determinate"
+          [value]="getProgress(status.state)"
+          color="accent"
+        ></mat-progress-bar>
+      </div>
+    </mat-step>
+  </mat-horizontal-stepper>
+</div>

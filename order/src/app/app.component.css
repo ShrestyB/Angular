@@ -1,0 +1,78 @@
+.order-status-container {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.stepper {
+  width: 100%;
+  max-width: 900px;
+}
+
+.status-item {
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.status-item.completed {
+  color: green;
+}
+
+.status-item.in-progress {
+  color: orange;
+}
+
+.status-item.pending {
+  color: gray;
+}
+
+.status-item .status-icon {
+  font-size: 36px;
+  display: block;
+  margin: 0 auto;
+}
+
+mat-progress-bar {
+  width: 100%;
+  margin-top: 15px;
+}
+
+mat-step {
+  display: flex;
+  justify-content: center;
+}
+
+mat-stepper {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.status-item:hover {
+  transform: scale(1.05);
+}
+
+.status-item:hover .status-icon {
+  color: #007bff;
+}
+
+mat-icon {
+  transition: color 0.3s ease;
+}
+
+/* Tooltips styling */
+mat-step[matTooltip] {
+  cursor: pointer;
+  position: relative;
+}
+
+mat-step mat-tooltip {
+  font-size: 14px;
+}
+
+/* Animated progress bars */
+mat-progress-bar {
+  transition: width 0.5s ease-in-out;
+}
