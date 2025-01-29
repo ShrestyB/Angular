@@ -4,6 +4,14 @@
   padding: 20px;
 }
 
+.mdc-linear-progress__bar-inner {
+  border-color: red !important;
+}
+:host ::ng-deep mat-mdc-progress-bar {
+  --mdc-linear-progress-active-indicator-color: #e41111 !important;
+  --mdc-linear-progress-track-color: rgba(252, 154, 154, 0.25) !important;
+}
+
 .stepper {
   width: 100%;
   max-width: 900px;
@@ -45,7 +53,7 @@ mat-step {
 }
 
 mat-stepper {
-  background-color: #f8f9fa;
+  background-color: red;
   padding: 20px;
   border-radius: 10px;
 }
@@ -55,7 +63,7 @@ mat-stepper {
 }
 
 .status-item:hover .status-icon {
-  color: #007bff;
+  color:white;
 }
 
 mat-icon {
@@ -76,3 +84,8 @@ mat-step mat-tooltip {
 mat-progress-bar {
   transition: width 0.5s ease-in-out;
 }
+
+/* 
+:root {
+  --mdc-linear-progress-active-indicator-color: #d70753;
+} */

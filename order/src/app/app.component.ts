@@ -1,10 +1,12 @@
 import { Component, OnInit} from '@angular/core';
 import { OrderStatus } from './app.model';
+import { ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'my-app',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 
 export class AppComponent implements OnInit {
